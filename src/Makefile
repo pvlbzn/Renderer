@@ -6,7 +6,7 @@ LIBS         = -lm
 DESTDIR = ./
 TARGET  = main
 
-OBJECTS := $(patsubst %.cpp,%.o,$(wildcard*.cpp))
+OBJECTS := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
 all: $(DESTDIR)$(TARGET)
 
@@ -17,6 +17,6 @@ $(OBJECTS): %.o: %.cpp
 	$(SYSCONF_LINK) -Wall $(CPPFLAGS) -c $(CFLAGS) $< -o $@
 
 clean:
-		-rm -f $(OBJECTS)
-		-rm -f $(TARGET)
-		-rm -f *.tga
+	-rm -f $(OBJECTS)
+	-rm -f $(TARGET)
+	-rm -f *.tga

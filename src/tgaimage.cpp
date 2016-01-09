@@ -3,7 +3,6 @@
 #include <string.h>
 #include <time.h>
 #include <math.h>
-
 #include "tgaimage.h"
 
 
@@ -62,7 +61,7 @@ bool TGAImage::read_tga_file(const char *filename) {
     data = NULL;
 
     /* Is this thing is a std name space type ifstream? */
-    std:ifstream in;
+    std::ifstream in;
     /* Will it look like "Std.Ios.Binary" in Java?
     in now stores or file */
     in.open (filename, std::ios::binary);
@@ -95,7 +94,7 @@ bool TGAImage::read_tga_file(const char *filename) {
     bytespp = header.bitsPerPixel >> 3;
 
     /* If something wrong with file */
-    if (width <= 0 || header <= 0 || (bytespp != GRAYSCALE && bytespp != RGB && bytespp != RGBA)) {
+    if (width <= 0 || height <= 0 || (bytespp != GRAYSCALE && bytespp != RGB && bytespp != RGBA)) {
         in.close();
         /* Research about EOF, do I have to put it in the end of the any stream? */
         std::cerr << "Bad bpp (or width/height) value\n";
@@ -315,7 +314,7 @@ bool TGAImage::unload_rle_data(std::ofstream &out) {
     /* Current pixel? */
     unsigned long curPix  = 0;
 
-    while (curpix < npixels) {
+    while (curPix < npixels) {
         /* Iterate over each pixel in limit of all pixels.
         * current pixel * bytespp gives a size in bytes where to go.
         * chunkStart I guess is from where to start, curByte is a current byte.
@@ -335,7 +334,7 @@ bool TGAImage::unload_rle_data(std::ofstream &out) {
                 succ_eq = (data[curByte + t] == data[curByte + t + bytespp]);
 
             /* Switch to the next pixel */
-            currByte += bytespp;
+            curByte += bytespp;
 
             if (1 == runLength)
                 raw = !succ_eq;

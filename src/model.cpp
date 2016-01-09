@@ -15,7 +15,7 @@ Model::Model(const char *filename) : verts_(), faces_() {
     in.open (filename, std::ifstream::in);
 
     if (in.fail())
-        return false;
+        return;
 
     std::string line;
 
@@ -38,7 +38,7 @@ Model::Model(const char *filename) : verts_(), faces_() {
 
             iss >> trash;
 
-            while (iss >> ids >> trash >> itrash >> trash >> itrash) {
+            while (iss >> idx >> trash >> itrash >> trash >> itrash) {
                 idx--;
                 f.push_back(idx);
             }
@@ -68,23 +68,3 @@ std::vector<int> Model::face(int idx) {
 Vec3f Model::vert(int i) {
     return verts_[i];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

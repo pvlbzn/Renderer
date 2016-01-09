@@ -23,7 +23,7 @@ public:
     int nfaces();
 
     Vec3f vert(int i);
-    std::vector<int> face(ind idx);
+    std::vector<int> face(int idx);
 
 };
 

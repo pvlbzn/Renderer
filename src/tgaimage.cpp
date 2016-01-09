@@ -6,7 +6,6 @@
 #include "tgaimage.h"
 
 
-
 // Initializator?
 TGAImage::TGAImage() : data(NULL), width(0), height(0), bytespp(0) {
 }

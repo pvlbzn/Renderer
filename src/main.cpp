@@ -45,7 +45,7 @@ void line(int x0, int y0, int x1, int y1, TGAImage &image, TGAColor color) {
 
         if (error > dx) {
             y += (y1 > y0 ? 1 : -1);
-            error -= dx * 2;
+            error2 -= dx * 2;
         }
     }
 

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "tgaimage.h"
 
 const TGAColor WHITE = TGAColor(255, 255, 255, 255);
@@ -58,9 +59,18 @@ int main() {
     // image.set(52, 41, RED);
     // Origin at the left bottom corner of the image.
     
-    line(13, 20, 80, 40, image, WHITE);
-    line(20, 13, 40, 80, image, RED);
-    line(80, 40, 13, 20, image, RED);
+    // line(13, 20, 80, 40, image, WHITE);
+    // line(20, 13, 40, 80, image, RED);
+    // line(80, 40, 13, 20, image, RED);
+    
+    line(20, 20, 20, 80, image, RED);
+    line(20, 80, 80, 80, image, RED);
+    line(80, 80, 80, 20, image, RED);
+    line(80, 20, 20, 20, image, RED);
+
+    for (int i = 50; i < 80; i++) {
+        line(50, 50, i, 79, image, WHITE);
+    }
     
     image.flip_vertically();
     image.write_tga_file("output.tga");

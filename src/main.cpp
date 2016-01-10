@@ -9,8 +9,8 @@ const TGAColor RED   = TGAColor(255,   0,   0, 255);
 
 Model *model = NULL;
 
-const int WIDTH  = 800;
-const int HEIGHT = 800;
+const int WIDTH  = 1600;
+const int HEIGHT = 1600;
 
 /*
 void wrong_line(int x0, int y0, int x1, int y1, TGAImage &image, TGAColor color) {

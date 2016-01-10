@@ -5,6 +5,7 @@
 #include "geometry.h"
 
 const TGAColor WHITE = TGAColor(255, 255, 255, 255);
+const TGAColor DGREY = TGAColor( 29,  29,  29, 255);
 const TGAColor RED   = TGAColor(255,   0,   0, 255);
 
 Model *model = NULL;
@@ -61,8 +62,15 @@ void line(int x0, int y0, int x1, int y1, TGAImage &image, TGAColor color) {
 
 }
 
+void paint_canvas(TGAImage &image, TGAColor color) {
+    /* Fill whole scene with color */
+    for (int i = 0; i < HEIGHT; i++)
+        line(0, i, WIDTH, i, image, color);
+}
+
 int main(int argc, char** argv) {
     /*
+    // Draw a rect and fill piece of it.
     TGAImage image(100, 100, TGAImage::RGB);
 
     line(13, 20, 80, 40, image, WHITE);
@@ -86,6 +94,8 @@ int main(int argc, char** argv) {
 
     TGAImage image(WIDTH, HEIGHT, TGAImage::RGB);
 
+    paint_canvas(image, WHITE);
+
     for (int i = 0; i<model->nfaces(); i++) {
         std::vector<int> face = model->face(i);
 
@@ -98,7 +108,7 @@ int main(int argc, char** argv) {
             int x1 = (v1.x + 1.) * WIDTH  / 2;
             int y1 = (v1.y + 1.) * HEIGHT / 2;
 
-            line(x0, y0, x1, y1, image, WHITE);
+            line(x0, y0, x1, y1, image, DGREY);
         }
     }
 

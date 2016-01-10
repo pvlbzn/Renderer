@@ -60,13 +60,12 @@ struct TGAColor {
 
 class TGAImage {
 
-    /* This is kind of Java private access modifier? */
     protected:
         unsigned char *data;
 
         int width,
             height,
-            bytespp;  // Bytes per pixel?
+            bytespp;
 
         bool load_rle_data(std::ifstream &in);
         bool unload_rle_data(std::ofstream &out);

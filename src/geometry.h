@@ -1,7 +1,3 @@
-//
-// Created by pbzn on 1/9/16.
-//
-
 #ifndef __GEOMETRY_H__
 #define __GEOMETRY_H__
 
@@ -18,12 +14,10 @@ template <class t> struct Vec2 {
     Vec2() : u(0), v(0) {}
     Vec2(t _u, t _v) : u(_u), v(_v) {}
 
-    /* C++ is pretty much cryptic. Is it operator overloading? */
     inline Vec2<t> operator +(const Vec2<t> &V) const { return  Vec2<t>(u + V.u, v + V.v); }
     inline Vec2<t> operator -(const Vec2<t> &V) const { return  Vec2<t>(u - V.u, v - V.v); }
     inline Vec2<t> operator *(float f) const { return  Vec2<t>(u * f, v * f); }
 
-    /* Wtf. TODO: Google it */
     template  <class > friend std::ostream& operator << (std::ostream& s, Vec2 <t>& v);
 };
 

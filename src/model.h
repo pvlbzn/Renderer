@@ -1,7 +1,3 @@
-//
-// Created by pbzn on 1/10/16.
-//
-
 #ifndef __MODEL_H__
 #define __MODEL_H__
 

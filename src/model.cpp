@@ -1,7 +1,3 @@
-//
-// Created by pbzn on 1/10/16.
-//
-
 #include <iostream>
 #include <string>
 #include <fstream>

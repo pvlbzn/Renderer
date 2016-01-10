@@ -1,9 +1,12 @@
 # Pure render
 Current realization:
-Input:  .obj
-Output: .tga
+
+| Input       | Output      |
+| ----------- | ----------- |
+| `.obj`      | `.tga`      |
 
 
+![alt text](https://github.com/pvlbzn/Renderer/blob/master/sample.png "Renderer output")
 
 # Purpose
 The purpose is to start learn C++. I have 'some' experience with Java, Python
